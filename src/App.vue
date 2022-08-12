@@ -1,15 +1,15 @@
 <template>
-  <Navbar :cartCount="cartCount" @resetCartCount="resetCartCount"/>
-  <div id="nav">
-  </div>
-  <router-view v-if="categories && products" style="min-height: 60vh"
-  :baseURL="baseURL"
-  :categories="categories"
-  :products="products"
-  @fetchData="fetchData"
+  <Navbar :cartCount="cartCount" @resetCartCount="resetCartCount" />
+  <router-view
+    v-if="categories && products"
+    style="min-height: 60vh"
+    :baseURL="baseURL"
+    :categories="categories"
+    :products="products"
+    @fetchData="fetchData"
   >
   </router-view>
-  <!-- footer -->
+  <!--  footer-->
   <Footer />
 </template>
 
@@ -21,7 +21,8 @@ export default {
   components: { Navbar, Footer },
   data() {
     return {
-      baseURL : "https://limitless-lake-55070.herokuapp.com/",
+      //baseURL : "https://limitless-lake-55070.herokuapp.com/",
+      baseURL: 'http://localhost:8080/',
       products: null,
       categories: null,
       cartCount: 0,
